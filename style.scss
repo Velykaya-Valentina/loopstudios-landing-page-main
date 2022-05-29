@@ -99,26 +99,40 @@ body {
       display: flex;
       gap: 5px;
       color: #c9c9c9;
-      &:hover {
-        color: #6699ff;
-      }
-    }
+     
   }
 
   &__menu-item {
     border: 1px solid transparent;
+    position: relative;
     &:hover {
-      color: #6699ff;
-      border: 1px solid #6699ff;
+      .header__menu-link::after {
+        transform: scale(1);
+      }
     }
   }
 
   &__menu-link {
+    &:after {
+      content: '';
+      width: 15%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transform: scale(0);
+      transition: all 0.3s;
+    }
     @media (min-width: 840px) {
+      &:after {
+        width: 40%;
+      }
       display: block;
       padding: 5px 10px;
       line-height: 1.5;
-
       color: #c9c9c9;
     }
     @media (min-width: 940px) {
@@ -299,14 +313,14 @@ body {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      // gap: 7px;
+
       padding: 30px 0;
     }
     @media (min-width: 1440px) {
       display: flex;
 
       flex-wrap: wrap;
-      // gap: 15px;
+
       padding: 30px 20px;
     }
   }
@@ -366,10 +380,10 @@ body {
     border: 1px solid #000;
     margin: 20px auto 0;
     transition: all 0.3s;
+
     &:hover {
-      background: #c9c9c9;
-      color: blue;
-      border: 1px solid blue;
+      background-color: #000;
+      color: #fff;
     }
     @media (min-width: 940px) {
       position: absolute;
@@ -381,7 +395,7 @@ body {
   }
 }
 .cool:hover {
-  fill: #6699ff;
+  // fill: #6699ff;
 }
 
 .footer {
@@ -424,22 +438,33 @@ body {
 
   &__item {
     margin-bottom: 20px;
+    position: relative;
+    &:hover {
+      .footer__link::after {
+        transform: scale(1);
+      }
+    }
   }
 
   &__link {
-    transition: all 0.3s;
-    &:hover {
-      color: #6699ff;
-      text-decoration: underline;
+    &:after {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transform: scale(0);
+      transition: all 0.3s;
     }
   }
 
   &__icon {
     background-color: transparent;
     border: 1px solid #000;
-    display: block;
-    transition: all 0.3s;
-    color: aqua;
   }
   &__inner-wrapper {
     @media (min-width: 1024px) {
@@ -452,12 +477,13 @@ body {
     opacity: 0.65;
   }
 }
-.social {
+.social-list {
+  position: relative;
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-top: 50px;
-  margin-bottom: 15px;
+  margin-bottom: 55px;
   @media (min-width: 1024px) {
     margin-top: 0;
     align-self: flex-end;
