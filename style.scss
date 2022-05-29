@@ -23,6 +23,7 @@ body {
   font-size: 15px;
   line-height: 18px;
 }
+
 .container {
   padding: 0 20px;
   @media (min-width: 1440px) {
@@ -99,90 +100,91 @@ body {
       display: flex;
       gap: 5px;
       color: #c9c9c9;
-     
-  }
+    }
 
-  &__menu-item {
-    border: 1px solid transparent;
-    position: relative;
-    &:hover {
-      .header__menu-link::after {
-        transform: scale(1);
+    &__menu-item {
+      border: 1px solid transparent;
+      position: relative;
+      &:hover {
+        .header__menu-link::after {
+          transform: scale(1);
+        }
       }
     }
-  }
 
-  &__menu-link {
-    &:after {
-      content: '';
-      width: 15%;
-      height: 2px;
-      background-color: #fff;
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      transform: scale(0);
-      transition: all 0.3s;
-    }
-    @media (min-width: 840px) {
+    &__menu-link {
       &:after {
-        width: 40%;
+        content: '';
+        width: 15%;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: scale(0);
+        transition: all 0.3s;
       }
-      display: block;
-      padding: 5px 10px;
-      line-height: 1.5;
-      color: #c9c9c9;
-    }
-    @media (min-width: 940px) {
-      font-size: 20px;
-    }
-    @media (min-width: 1440px) {
-      font-size: 30px;
-    }
-  }
-
-  &__box-title {
-    max-width: 300px;
-    margin: 180px auto 180px;
-    padding: 20px;
-    border: 1px solid #fff;
-    @media (min-width: 840px) {
-      max-width: 465px;
-      padding: 40px 50px;
-    }
-    @media (min-width: 940px) {
-      margin-left: 50px;
-      max-width: 50%;
-    }
-    @media (min-width: 1440px) {
-      margin: 145px 105px;
-      padding: 30px 60px;
-    }
-  }
-
-  &__title {
-    font-size: 42px;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #fff;
-    font-weight: 300;
-    @media (min-width: 840px) {
-      font-size: 60px;
-    }
-    @media (min-width: 940px) {
-      font-size: 66px;
-    }
-    @media (min-width: 1024px) {
-      font-size: 72px;
+      @media (min-width: 840px) {
+        &:after {
+          width: 40%;
+        }
+        display: block;
+        padding: 5px 10px;
+        line-height: 1.5;
+        color: #c9c9c9;
+      }
+      @media (min-width: 940px) {
+        font-size: 20px;
+      }
+      @media (min-width: 1440px) {
+        font-size: 30px;
+      }
     }
 
-    @media (min-width: 1440px) {
-      font-size: 86px;
+    &__box-title {
+      max-width: 300px;
+      margin: 180px auto 180px;
+      padding: 20px;
+      border: 1px solid #fff;
+      @media (min-width: 840px) {
+        max-width: 465px;
+        padding: 40px 50px;
+      }
+      @media (min-width: 940px) {
+        margin-left: 50px;
+        max-width: 50%;
+      }
+      @media (min-width: 1440px) {
+        margin: 145px 105px;
+        padding: 30px 60px;
+      }
+    }
+
+    &__title {
+      font-size: 42px;
+      line-height: 1;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 300;
+      @media (min-width: 840px) {
+        font-size: 60px;
+      }
+      @media (min-width: 940px) {
+        font-size: 66px;
+      }
+      @media (min-width: 1024px) {
+        font-size: 72px;
+      }
+
+      @media (min-width: 1440px) {
+        font-size: 86px;
+      }
     }
   }
 }
+
 .active {
   position: absolute;
   right: 26%;
@@ -394,9 +396,6 @@ body {
     }
   }
 }
-.cool:hover {
-  // fill: #6699ff;
-}
 
 .footer {
   background: #000;
@@ -435,9 +434,8 @@ body {
       gap: 25px;
     }
   }
-
   &__item {
-    margin-bottom: 20px;
+    padding: 15px 10px;
     position: relative;
     &:hover {
       .footer__link::after {
@@ -445,7 +443,6 @@ body {
       }
     }
   }
-
   &__link {
     &:after {
       content: '';
@@ -453,7 +450,7 @@ body {
       height: 2px;
       background-color: #fff;
       position: absolute;
-      bottom: -10px;
+      bottom: 5px;
       left: 0;
       right: 0;
       margin: 0 auto;
@@ -462,10 +459,6 @@ body {
     }
   }
 
-  &__icon {
-    background-color: transparent;
-    border: 1px solid #000;
-  }
   &__inner-wrapper {
     @media (min-width: 1024px) {
       display: flex;
@@ -473,23 +466,36 @@ body {
     }
   }
 
+  &__social-list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+    @media (min-width: 1024px) {
+      margin-top: 0;
+      align-self: flex-end;
+    }
+  }
+
+  &__social-item {
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+    transition: all 0.3s;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  &__social-icon {
+    background-color: transparent;
+  }
+
   &__copy {
     opacity: 0.65;
   }
 }
-.social-list {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 50px;
-  margin-bottom: 55px;
-  @media (min-width: 1024px) {
-    margin-top: 0;
-    align-self: flex-end;
-  }
-}
-
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -497,6 +503,7 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
 @media (min-width: 940px) {
   .item1 {
     background-image: url('/images/desktop/image-deep-earth.jpg');
