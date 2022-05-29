@@ -63,14 +63,14 @@ body {
   &__logo {
     width: 120px;
     height: auto;
+    z-index: 3;
     @media (min-width: 940px) {
       width: 200px;
     }
   }
 
   &__btn {
-    display: block;
-    background-image: url('/images/icon-hamburger.svg');
+    display: none;
     width: 24px;
     height: 24px;
     background-repeat: no-repeat;
@@ -83,15 +83,21 @@ body {
     opacity: 0;
     position: absolute;
     transform: translateX(-500px);
-    transition: all 0.3s;
+    transition: translate 0.3s;
 
     @media (min-width: 840px) {
       position: relative;
       transform: translateX(-80%);
       opacity: 1;
-      width: 240px;
+      width: 280px;
       align-self: flex-end;
       padding: 10px 30px;
+    }
+    @media (min-width: 1024px) {
+      width: 290px;
+    }
+    @media (min-width: 1440px) {
+      width: 360px;
     }
   }
 
@@ -101,103 +107,111 @@ body {
       gap: 5px;
       color: #c9c9c9;
     }
-
-    &__menu-item {
-      border: 1px solid transparent;
-      position: relative;
-      &:hover {
-        .header__menu-link::after {
-          transform: scale(1);
-        }
-      }
-    }
-
-    &__menu-link {
-      &:after {
-        content: '';
-        width: 15%;
-        height: 2px;
-        background-color: #fff;
-        position: absolute;
-        bottom: 0px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        transform: scale(0);
-        transition: all 0.3s;
-      }
-      @media (min-width: 840px) {
-        &:after {
-          width: 40%;
-        }
-        display: block;
-        padding: 5px 10px;
-        line-height: 1.5;
-        color: #c9c9c9;
-      }
-      @media (min-width: 940px) {
-        font-size: 20px;
-      }
-      @media (min-width: 1440px) {
-        font-size: 30px;
-      }
-    }
-
-    &__box-title {
-      max-width: 300px;
-      margin: 180px auto 180px;
-      padding: 20px;
-      border: 1px solid #fff;
-      @media (min-width: 840px) {
-        max-width: 465px;
-        padding: 40px 50px;
-      }
-      @media (min-width: 940px) {
-        margin-left: 50px;
-        max-width: 50%;
-      }
-      @media (min-width: 1440px) {
-        margin: 145px 105px;
-        padding: 30px 60px;
-      }
-    }
-
-    &__title {
-      font-size: 42px;
-      line-height: 1;
-      text-transform: uppercase;
-      color: #fff;
-      font-weight: 300;
-      @media (min-width: 840px) {
-        font-size: 60px;
-      }
-      @media (min-width: 940px) {
-        font-size: 66px;
-      }
-      @media (min-width: 1024px) {
-        font-size: 72px;
-      }
-
-      @media (min-width: 1440px) {
-        font-size: 86px;
+  }
+  &__menu-item {
+    border: 1px solid transparent;
+    &:hover {
+      .header__menu-link::after {
+        transform: scale(1);
       }
     }
   }
+
+  &__menu-link {
+    position: relative;
+    &:after {
+      content: '';
+      width: 35%;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      transform: scale(0);
+      transition: all 0.3s;
+    }
+
+    @media (min-width: 840px) {
+      &:after {
+        width: 40%;
+      }
+      display: block;
+      padding: 5px 10px;
+      line-height: 1.5;
+      color: #c9c9c9;
+    }
+    @media (min-width: 940px) {
+      font-size: 24px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 30px;
+    }
+  }
+
+  &__box-title {
+    max-width: 300px;
+    margin: 180px auto 180px;
+    padding: 20px;
+    border: 1px solid #fff;
+    @media (min-width: 840px) {
+      max-width: 465px;
+      padding: 40px 50px;
+    }
+    @media (min-width: 940px) {
+      margin-left: 50px;
+      max-width: 50%;
+    }
+    @media (min-width: 1440px) {
+      margin: 145px 105px;
+      padding: 30px 60px;
+    }
+  }
+
+  &__title {
+    font-size: 42px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+    @media (min-width: 840px) {
+      font-size: 60px;
+    }
+    @media (min-width: 940px) {
+      font-size: 66px;
+    }
+    @media (min-width: 1024px) {
+      font-size: 72px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 86px;
+    }
+  }
+}
+#btnOpen {
+  background-image: url('/images/icon-hamburger.svg');
+}
+#btnClose {
+  background-image: url('/images/icon-close.svg');
+}
+.btn-active {
+  display: block;
 }
 
 .active {
   position: absolute;
-  right: 26%;
-  top: 130px;
-  transform: translateX(-57px);
   opacity: 1;
-  min-width: 50%;
-  padding: 30px 0;
-  text-align: center;
-  font-size: 20px;
+
+  top: -8px;
+  transform: translateX(-77px);
+  min-width: 60%;
+  padding: 100px;
+  text-align: left;
+  font-size: 22px;
   line-height: 3;
   color: #fff;
-  background-color: rgb(10, 10, 10);
+  background-color: #000;
 }
 
 .descr {
