@@ -49,16 +49,10 @@
               </li>
             </ul>
           </nav>
-          <div
-            id="btnClose"
-            class="header__btn btn-close"
-            onclick="closeMenu()"
-          ></div>
-          <div
-            id="btnOpen"
-            class="header__btn btn-open btn-active"
-            onclick="openMenu()"
-          ></div>
+          <div class="burgerMenuIcon showBurger">
+            <div id="btnClose" class="header__btn" onclick="closeMenu()"></div>
+            <div id="btnBurger" class="header__btn" onclick="openMenu()"></div>
+          </div>
         </div>
         <div class="header__box-title">
           <h1 class="header__title">Immersive experiences that deliver</h1>
@@ -286,26 +280,20 @@
     </div>
     <script>
       const menu = document.querySelector('.header__menu');
-      const btnOpen = document.querySelector('#btnOpen');
+      const burgerMenu = document.querySelector('.burgerMenuIcon');
+      const btnBurger = document.querySelector('#btnBurger');
       const btnClose = document.querySelector('#btnClose');
-      window.addEventListener('resize', toggleBtn());
-      function toggleBtn() {
-        if (window.innerWidth <= 839) {
-          btnOpen.classList.add('btn-active');
-        } else {
-          btnOpen.classList.remove('btn-active');
-          btnClose.classList.remove('btn-active');
-        }
-      }
-      function openMenu() {
-        menu.classList.add('active');
-        btnClose.classList.add('btn-active');
-        btnOpen.classList.remove('btn-active');
-      }
+
       function closeMenu() {
         menu.classList.remove('active');
-        btnClose.classList.remove('btn-active');
-        btnOpen.classList.add('btn-active');
+        burgerMenu.classList.remove('showClose');
+        burgerMenu.classList.add('showBurger');
+      }
+
+      function openMenu() {
+        menu.classList.add('active');
+        burgerMenu.classList.remove('showBubger');
+        burgerMenu.classList.add('showClose');
       }
     </script>
   </body>
